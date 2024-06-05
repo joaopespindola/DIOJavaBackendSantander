@@ -8,7 +8,7 @@ import org.example.exceptions.NumeroContaInvalidoException;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public abstract class ContaTerminal {
+public class ContaTerminal {
 
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
