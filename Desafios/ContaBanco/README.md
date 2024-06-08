@@ -1,6 +1,9 @@
 # Resolução do desafio de projeto "ContaBanco" da DIO
 www.dio.me
 
+#### Resolução por
+- [joaopespindola](https://github.com/joaopespindola)
+
 #### Autores
 - [Gleyson Sampaio](https://github.com/glysns)
 
