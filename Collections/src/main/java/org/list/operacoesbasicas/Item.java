@@ -1,4 +1,4 @@
-package org.example.operacoesbasicas;
+package org.list.operacoesbasicas;
 
 public class Item {
     private String nome;
