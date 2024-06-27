@@ -34,7 +34,7 @@ public class Aluno implements Comparable<Aluno>{
     @Override
     public String toString() {
         return "Nome aluno: " + nome + " /Matricula: " + matricula +
-                " /Media: " + media;
+                " /Media: " + media + "\n";
     }
 
     @Override
@@ -52,7 +52,7 @@ public class Aluno implements Comparable<Aluno>{
 }
 
 class AlunoComparator implements Comparator<Aluno> {
-    
+
     @Override
     public int compare(Aluno a1, Aluno a2) {
         return Double.compare(a1.getMedia(), a2.getMedia());
