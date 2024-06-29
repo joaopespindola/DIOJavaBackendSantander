@@ -60,7 +60,7 @@ public class ContagemPalavras {
         contagemPalavra.removerPalavra("Ruby");
 
         contagemPalavra.exibirContagemPalavras();
-        
+
         contagemPalavra.encontrarPalavraMaisFrequente();
     }
 }
