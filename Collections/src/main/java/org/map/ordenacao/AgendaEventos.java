@@ -26,7 +26,7 @@ public class AgendaEventos {
     public void obterProximoEvento() {
         LocalDate dataAgora = LocalDate.now();
         Map<LocalDate, Evento> eventosTreeMap = new TreeMap<>(eventosMap); // Eventos ordenados de maneira crescente
-        for (Map.Entry<LocalDate, Evento> entry : eventosTreeMap.entrySet()) { 
+        for (Map.Entry<LocalDate, Evento> entry : eventosTreeMap.entrySet()) {
             if (entry.getKey().isEqual(dataAgora) || entry.getKey().isAfter(dataAgora)) {
                 System.out.println("O proximo evento eh " + entry.getValue().getNomeEvento() + " e acontecera em " + entry.getKey());
                 break;

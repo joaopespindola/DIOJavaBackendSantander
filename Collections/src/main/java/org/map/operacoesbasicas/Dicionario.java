@@ -29,14 +29,11 @@ public class Dicionario {
     public String pesquisarPorPalavra(String palavra) {
         if (dicionarioMap.isEmpty()) {
             System.out.println("O dicionario esta vazio");
-            return null;
         }
-
         String definicaoPorPalavra = dicionarioMap.get(palavra);
         if (definicaoPorPalavra == null) {
             System.out.println("Palavra nao encontrada");
         }
-
         return definicaoPorPalavra;
     }
 
