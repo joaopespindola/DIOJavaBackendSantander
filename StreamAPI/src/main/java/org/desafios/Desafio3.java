@@ -10,11 +10,11 @@ public class Desafio3 {
 
         Predicate<Integer> EhPositivo = numero -> numero > 0;
         boolean todosPositivos = numeros.stream()
-                                .allMatch(EhPositivo);// Verifica se todos os elementos satisfazem o predicate em questão
+                .allMatch(EhPositivo);// Verifica se todos os elementos satisfazem o predicate em questão
 
-        if(todosPositivos) {
+        if (todosPositivos) {
             System.out.println("Todos os numeros sao positivos");
-        }else System.out.println("Existem numeros nao positivos");
+        } else System.out.println("Existem numeros nao positivos");
     }
 
 }
