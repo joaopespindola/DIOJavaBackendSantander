@@ -1,8 +1,8 @@
 package org.banco.model;
 
-public class ContaCorrenteModel extends ContaModel {
+public class ContaPoupanca extends Conta {
 
-    public ContaCorrenteModel(ClienteModel cliente, BancoModel banco) {
+    public ContaPoupanca(Cliente cliente, Banco banco) {
         super(cliente, banco);
     }
 

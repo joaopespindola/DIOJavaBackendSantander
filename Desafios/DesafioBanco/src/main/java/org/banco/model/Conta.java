@@ -8,16 +8,16 @@ import org.banco.exceptions.ValorInvalidoException;
 import java.math.BigDecimal;
 
 @Getter
-public abstract class ContaModel implements InterfaceConta {
+public abstract class Conta implements InterfaceConta {
     private static final int AGENCIA_DEFAULT = 1;
     private static int SEQUENCIAL = 1;
     protected int agencia;
     protected int numero;
     protected BigDecimal saldo;
-    protected ClienteModel cliente;
-    protected BancoModel banco;
+    protected Cliente cliente;
+    protected Banco banco;
 
-    public ContaModel(ClienteModel cliente, BancoModel banco) {
+    public Conta(Cliente cliente, Banco banco) {
         this.agencia = AGENCIA_DEFAULT;
         this.numero = SEQUENCIAL;
         SEQUENCIAL++;
@@ -28,10 +28,14 @@ public abstract class ContaModel implements InterfaceConta {
 
     @Override
     public void sacar(BigDecimal valor) throws SaldoInsuficienteException {
+        if (valor.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new ValorInvalidoException("Valor de saque deve ser positivo.");
+        }
         if (valor.compareTo(saldo) > 0) {
             throw new SaldoInsuficienteException("Saldo insuficiente para realizar saque.");
         }
         saldo = saldo.subtract(valor);
+        System.out.println("Saque realizado com sucesso!");
     }
 
     @Override
@@ -43,7 +47,7 @@ public abstract class ContaModel implements InterfaceConta {
     }
 
     @Override
-    public void transferir(BigDecimal valor, ContaModel contaDestino) throws SaldoInsuficienteException {
+    public void transferir(BigDecimal valor, Conta contaDestino) throws SaldoInsuficienteException {
         if (valor.compareTo(saldo) > 0) {
             throw new SaldoInsuficienteException("Saldo insuficiente para realizar transferência.");
         }

@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class BancoView {
     public static void main(String[] args) {
-        BancoModel banco = new BancoModel("Santander");
-        ClienteModel clienteJoao = new ClienteModel("Joao");
+        Banco banco = new Banco("Santander");
+        Cliente clienteJoao = new Cliente("Joao");
         Scanner scanner = new Scanner(System.in);
 
         boolean running = true;
@@ -22,10 +22,10 @@ public class BancoView {
             try {
                 switch (escolha) {
                     case 1:
-                        banco.criarConta(clienteJoao, ContaCorrenteModel.class);
+                        banco.criarConta(clienteJoao, ContaCorrente.class);
                         break;
                     case 2:
-                        banco.criarConta(clienteJoao, ContaPoupancaModel.class);
+                        banco.criarConta(clienteJoao, ContaPoupanca.class);
                         break;
                     case 3:
                         numeroConta = solicitarNumeroConta(scanner);
@@ -49,8 +49,8 @@ public class BancoView {
                         System.out.println("Qual o valor que deseja transferir? ");
                         BigDecimal valorTransferido = lerValor(scanner);
 
-                        ContaModel contaOrigem = banco.getConta(numeroContaOrigem);
-                        ContaModel contaDestino = banco.getConta(numeroContaDestino);
+                        Conta contaOrigem = banco.getConta(numeroContaOrigem);
+                        Conta contaDestino = banco.getConta(numeroContaDestino);
 
                         contaOrigem.transferir(valorTransferido, contaDestino);
                         System.out.println("Transferência realizada com sucesso!");

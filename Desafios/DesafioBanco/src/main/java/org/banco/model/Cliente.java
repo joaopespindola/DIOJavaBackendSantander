@@ -3,10 +3,10 @@ package org.banco.model;
 import lombok.Getter;
 
 @Getter
-public class ClienteModel {
+public class Cliente {
     private String nome;
 
-    public ClienteModel(String nome) {
+    public Cliente(String nome) {
         this.nome = nome;
     }
 }

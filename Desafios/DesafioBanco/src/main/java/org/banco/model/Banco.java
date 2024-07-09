@@ -6,21 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Getter
-public class BancoModel {
+public class Banco {
     private String nome;
-    private List<ContaModel> contas;
+    private List<Conta> contas;
 
-    public BancoModel(String nome) {
+    public Banco(String nome) {
         this.nome = nome;
         this.contas = new ArrayList<>();
     }
 
-    public ContaModel criarConta(ClienteModel titular, Class<? extends ContaModel> tipoConta){// "Class<? extends Conta>" generics com coringa
-        ContaModel conta;
-        if (tipoConta == ContaCorrenteModel.class) {
-            conta = new ContaCorrenteModel(titular, this);
-        } else if (tipoConta == ContaPoupancaModel.class) {
-            conta = new ContaPoupancaModel(titular, this);
+    public Conta criarConta(Cliente titular, Class<? extends Conta> tipoConta){// "Class<? extends Conta>" generics com coringa
+        Conta conta;
+        if (tipoConta == ContaCorrente.class) {
+            conta = new ContaCorrente(titular, this);
+        } else if (tipoConta == ContaPoupanca.class) {
+            conta = new ContaPoupanca(titular, this);
         } else {
             throw new IllegalArgumentException("Tipo de conta desconhecido");
         }
@@ -33,13 +33,13 @@ public class BancoModel {
         if(contas.isEmpty()){
             System.out.println("Nenhuma conta encontrada.");
         }
-        for (ContaModel conta : contas) {
+        for (Conta conta : contas) {
             conta.imprimirExtrato();
             System.out.println("\n");
         }
     }
 
-    public ContaModel getConta(int numero) {
+    public Conta getConta(int numero) {
         return contas.get(numero - 1);
     }
 }
