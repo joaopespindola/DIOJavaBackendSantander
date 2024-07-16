@@ -1,6 +1,5 @@
 package br.com.bootcamp.dominio;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

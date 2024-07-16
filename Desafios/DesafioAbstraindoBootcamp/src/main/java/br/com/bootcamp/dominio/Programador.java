@@ -2,7 +2,6 @@ package br.com.bootcamp.dominio;
 
 import br.com.bootcamp.exceptions.AlreadyEnrolledException;
 import br.com.bootcamp.exceptions.NoContentAvailableException;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,14 +37,6 @@ public class Programador {
 
     public Double calcularTotalXp() {
         return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
-    }
-
-    public Set<Conteudo> getConteudosInscritos() {
-        return conteudosInscritos;
-    }
-
-    public Set<Conteudo> getConteudosConcluidos() {
-        return conteudosConcluidos;
     }
 
     @Override
