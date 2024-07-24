@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class BancoView {
     public static void main(String[] args) {
         Banco banco = new Banco("Santander");
-        Cliente clienteJoao = new Cliente("Joao");
+        Cliente clienteJoao = new Cliente("Joao");// TO-DO feature para ter mais clientes
         Scanner scanner = new Scanner(System.in);
 
         boolean running = true;
