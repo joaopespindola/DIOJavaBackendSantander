@@ -1,9 +1,13 @@
 package me.dio.desafio_api_rest_na_nuvem.domain.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "tb_account")
 public class Account {
 

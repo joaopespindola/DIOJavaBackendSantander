@@ -5,6 +5,7 @@ import me.dio.desafio_api_rest_na_nuvem.domain.repository.UserRepository;
 import me.dio.desafio_api_rest_na_nuvem.domain.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -19,6 +20,11 @@ public class UserServiceImplementation implements UserService {
     @Override
     public User findById(Long id) {
         return userRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
     @Override
