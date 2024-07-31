@@ -40,4 +40,16 @@ public class UserController {
                 .toUri();
         return ResponseEntity.created(location).body(userCreated);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User userToUpdate) {
+        User updatedUser = userService.update(userToUpdate, id);
+        return ResponseEntity.ok(updatedUser);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        userService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -34,4 +34,14 @@ public class UserServiceImplementation implements UserService {
         }
         return userRepository.save(userToCreate);
     }
+
+    @Override
+    public User update(User userToUpdate, Long id) {
+        userToUpdate.setId(id);
+        return userRepository.save(userToUpdate);
+    }
+
+    public void deleteById(Long id) {
+        userRepository.deleteById(id);
+    }
 }
